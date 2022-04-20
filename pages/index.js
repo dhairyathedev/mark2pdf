@@ -45,9 +45,9 @@ export default function New() {
 
     const handlePrint = () => {
         return (
-                <button className="text-xl font-light border border-green-500 text-green-500 rounded-full px-4 py-2 m-2 transition duration-500 hover:text-white ease select-none hover:bg-green-600 focus:outline-none focus:shadow-outline"
-                 suppressHydrationWarning>
-                    Save to PDF
+                <button className="text-xl flex flow-row font-light border border-green-500 text-green-500 rounded-full px-4 py-2 m-2 transition duration-500 hover:text-white ease select-none hover:bg-green-600 focus:outline-none focus:shadow-outline"
+                 >  
+                    Save as PDF
                 </button>
         )
     }
@@ -65,10 +65,22 @@ export default function New() {
             </h1>
         </div>
         <div className="flex flex-row items-center space-x-4">
+            <div className={`${editorHidden ? "block" : "hidden"}`}>
                 <ReactToPrint 
                     content={() => markdownRef.current}
                     trigger={handlePrint}
                 />
+            </div>
+            <div className={`${!editorHidden ? "block" : "hidden"}`}>
+              <button className="text-xl flex flow-row font-light border border-green-500 text-green-500 rounded-full px-4 py-2 m-2 transition duration-500 hover:text-white ease select-none hover:bg-green-600 focus:outline-none focus:shadow-outline"
+                  onClick={() => 
+                    setEditorHidden(!editorHidden)
+                  }>  
+                      <IconEye className="mr-2" />
+                      Preview
+              </button>
+            </div>
+
         </div>
     </div>
 
@@ -127,7 +139,7 @@ export default function New() {
     </div>
     {/* Output */}
     <div ref={markdownRef} className={`max-w-screen-md mx-auto font-inter m-2 p-4 ${editorHidden ? "block" : "hidden"}`}>
-            <MarkdownComponent text={markText} />
+            <MarkdownComponent text={markText ? markText: "Nothing to preview 🧐"} />
     </div>
 </div>
     </>
