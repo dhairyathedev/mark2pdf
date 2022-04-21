@@ -66,6 +66,7 @@ export default function New() {
         <NextSeo
             title="Convert your markdown to beautiful PDF in seconds with our online converter - mark2pdf"
             description="Paste your markdown markup and we will convert it to a PDF file"
+            canonical="http://mark2pdf.vercel.app/"
             openGraph={{
                 title: 'Convert your markdown to beautiful PDF with our online converter - mark2pdf',
                 description: 'Paste your markdown markup and we will convert it to a PDF file',
@@ -77,6 +78,12 @@ export default function New() {
                 site: '@mark2pdf',
                 cardType: 'summary_large_image',
             }}
+            additionalMetaTags={[
+                {
+                  property: 'keywords',
+                  content: "markdown, pdf, markdown to pdf, markdown to pdf converter online, markdown guide"
+                }
+              ]}
         />
         <div className="max-w-screen-lg mx-auto font-inter m-2 p-4">
         <div className="flex justify-between">
