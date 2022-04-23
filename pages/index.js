@@ -66,7 +66,7 @@ export default function New() {
         <NextSeo
             title="Convert your markdown to beautiful PDF in seconds - mark2pdf"
             description="Convert your markdown to beautiful PDF in seconds! Just paste your markdown markup and we will convert it to a PDF file. "
-            canonical="http://mark2pdf.vercel.app/"
+            canonical="https://mark2pdf.vercel.app"
             openGraph={{
                 title: 'Convert your markdown to beautiful PDF in seconds - mark2pdf',
                 description: 'Convert your markdown to beautiful PDF in seconds! Just paste your markdown markup and we will convert it to a PDF file.',
